@@ -120,7 +120,7 @@ export function transformCommonjs(
 	function isStaticRequireStatement(node) {
 		if (!isRequireStatement(node)) return;
 		if (hasDynamicArguments(node)) return;
-		if (ignoreRequire(node.arguments[0].value)) return;
+		if (ignoreRequire(node.arguments[0].value, id)) return;
 		return true;
 	}
 
